@@ -61,7 +61,8 @@ $(function() {
     /* TODO: Write a new test suite named "The menu" */
 
     describe('The menu', function() {
-      myclass = body.classList.contains('menu-hidden');
+      let mybody = document.getElementsByTagName('body')
+      myclass = mybody.hasClass('menu-hidden');
       it('is hidden', function() {
         expect(myclass).toBe('true');
         //$('body').addClass('menu-hidden');
