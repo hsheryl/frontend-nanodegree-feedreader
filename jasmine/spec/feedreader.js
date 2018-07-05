@@ -78,14 +78,19 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
           it('changes on click', function() {
-            beforeEach()
-            expect(menuIcon.click().hasClass('menu-hidden')).toBe(false);
-            expect(menuIcon.click().hasClass('menu-hidden')).toBe(true);
+            let menuIcon = $('.menu-icon-link');
+            menuIcon.click();
+            myclass = $('body').hasClass('menu-hidden');
+            expect(myclass).toBe(false);
+            menuIcon.click();
+            myclass = $('body').hasClass('menu-hidden');
+            expect(myclass).toBe(true);
           })
 
    });
     /* TODO: Write a new test suite named "Initial Entries" */
   describe('Initial Entries', function() {
+    let container = $('.feed');
       it('contains something', function(){
         expect(container.length).not.toBe(0);
       })
