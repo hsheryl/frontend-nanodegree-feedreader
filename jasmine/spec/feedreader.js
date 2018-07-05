@@ -104,9 +104,19 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
   describe('New Feed Selection', function() {
+    let loadFeed0;
+    let loadFeed1;
+    beforeEach(function(done) {
+      loadFeed0 = loadFeed(0, function() {
+        loadFeed1 = loadFeed(1, function() {
+          done();
+        });
+      });
+    });
+
     it('changes to new', function(){
-      expect(loadFeed(0, function(){done()}).not.toBe(loadFeed(1, function(){done()})));
-    })
+      expect(loadFeed0).not.toBe(loadFeed1);
+    });
   });
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
