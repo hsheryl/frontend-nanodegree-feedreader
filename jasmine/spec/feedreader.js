@@ -88,16 +88,16 @@ $(function() {
    });
     /* TODO: Write a new test suite named "Initial Entries" */
   describe('Initial Entries', function() {
-    let container = 0;
+    let initialLoad = 0;
     beforeEach(function(done) {
       loadFeed(0, function(){
-        container = $('.feed').html();
+        initialLoad = $('.feed').html();
         done();
       });
   });
     //let entrylist = container.find('.entry');
     it('contains something', function(done){
-      expect(container).not.toBe(0);
+      expect(initialLoad.length).not.toBe(0);
       done();
     });
   });
