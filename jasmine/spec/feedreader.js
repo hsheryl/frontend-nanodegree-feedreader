@@ -90,9 +90,11 @@ $(function() {
   describe('Initial Entries', function() {
     let container = 0;
     beforeEach(function(done) {
-      container = $('.feed');
-      done();
-    })
+      loadFeed(0, function(){
+        container = $('.feed').html();
+        done();
+      });
+  });
     //let entrylist = container.find('.entry');
     it('contains something', function(done){
       expect(container).not.toBe(0);
@@ -112,9 +114,9 @@ $(function() {
     let loadFeed1 = 0;
     beforeEach(function(done) {
       loadFeed(0, function() {
-        loadFeed0 = $('.feed');
+        loadFeed0 = $('.feed').html();
         loadFeed(1, function() {
-          loadFeed1 = $('.feed');
+          loadFeed1 = $('.feed').html();
           done();
         });
       });
