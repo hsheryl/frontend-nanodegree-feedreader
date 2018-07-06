@@ -88,11 +88,15 @@ $(function() {
    });
     /* TODO: Write a new test suite named "Initial Entries" */
   describe('Initial Entries', function() {
-    let container = $('.feed');
-    let entrylist = container.find('.entry');
-    it('contains something', function(){
-      expect(entrylist.length).not.toBe(0);
-
+    let container = 0;
+    beforeEach(function(done) {
+      container = $('.feed');
+      done();
+    })
+    //let entrylist = container.find('.entry');
+    it('contains something', function(done){
+      expect(container).not.toBe(0);
+      done();
     });
   });
         /* TODO: Write a test that ensures when the loadFeed
@@ -117,7 +121,6 @@ $(function() {
     });
 
     it('changes to new', function(done){
-        console.log(loadFeed0);
       expect(loadFeed0).not.toBe(loadFeed1);
       done();
     });
