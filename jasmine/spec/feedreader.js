@@ -104,11 +104,13 @@ $(function() {
 
     /* TODO: Write a new test suite named "New Feed Selection" */
   describe('New Feed Selection', function() {
-    let loadFeed0;
-    let loadFeed1;
+    let loadFeed0 = 0;
+    let loadFeed1 = 0;
     beforeEach(function(done) {
-      loadFeed0 = loadFeed(0, function() {
-        loadFeed1 = loadFeed(1, function() {
+      loadFeed(0, function() {
+        loadFeed0 = $('.feed');
+        loadFeed(1, function() {
+          loadFeed1 = $('.feed');
           done();
         });
       });
