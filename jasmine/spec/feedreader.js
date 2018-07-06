@@ -32,23 +32,22 @@ $(function() {
          * and that the URL is not empty.
          */
          allFeeds.forEach(function(element) {
-                   it('URL defined', function() {
-                     expect(element.url).toBeDefined();
-                     expect(element.url).not.toBe(0);
-                   });
-                 });
+            it('URL defined', function() {
+              expect(element.url).toBeDefined();
+              expect(element.url).not.toBe(0);
+            });
+          });
 
                 /* TODO: Write a test that loops through each feed
                  * in the allFeeds object and ensures it has a name defined
                  * and that the name is not empty.
                  */
-           allFeeds.forEach(function(element) {
-                    it('name defined', function() {
-                      expect(element.name).toBeDefined();
-                      expect(element.name).not.toBe(0);
-                    });
-
-            });
+        allFeeds.forEach(function(element) {
+          it('name defined', function() {
+            expect(element.name).toBeDefined();
+            expect(element.name).not.toBe(0);
+          });
+        });
 
 
         /* TODO: Write a test that loops through each feed
@@ -70,7 +69,7 @@ $(function() {
          myclass = $('body').hasClass('menu-hidden');
          it('is hidden', function() {
            expect(myclass).toBe(true);
-         })
+         });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -85,15 +84,16 @@ $(function() {
             menuIcon.click();
             myclass = $('body').hasClass('menu-hidden');
             expect(myclass).toBe(true);
-          })
-
+          });
    });
     /* TODO: Write a new test suite named "Initial Entries" */
   describe('Initial Entries', function() {
     let container = $('.feed');
-      it('contains something', function(){
-        expect(container.length).not.toBe(0);
-      })
+    let entrylist = container.find('.entry');
+    it('contains something', function(){
+      expect(entrylist.length).not.toBe(0);
+
+    });
   });
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -116,8 +116,10 @@ $(function() {
       });
     });
 
-    it('changes to new', function(){
+    it('changes to new', function(done){
+        console.log(loadFeed0);
       expect(loadFeed0).not.toBe(loadFeed1);
+      done();
     });
   });
         /* TODO: Write a test that ensures when a new feed is loaded
