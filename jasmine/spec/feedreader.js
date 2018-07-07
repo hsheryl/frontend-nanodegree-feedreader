@@ -95,9 +95,11 @@ $(function() {
         done();
       });
   });
-    //let entrylist = container.find('.entry');
+
+  /*I defined initialLoad as = to 0 therefore if it is no longer 0
+      it must have at least one element inside it. */
     it('contains something', function(done){
-      expect(initialLoad.length).not.toBe(0);
+      expect(initialLoad).not.toBe(0);
       done();
     });
   });
