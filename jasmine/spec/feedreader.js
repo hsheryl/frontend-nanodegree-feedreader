@@ -76,16 +76,17 @@ $(function() {
    });
 
   describe('Initial Entries', function() {
-    let initialLoad = 0;
+    let initialLoad;
     beforeEach(function(done) {
       loadFeed(0, function(){
-        initialLoad = $('.feed .entry').length();
+        initialLoad = $('.feed .entry').length;
         done();
       });
   });
 
     it('contains something', function(done){
-      expect(initialLoad => 1).toBe(true);
+      expect(initialLoad >= 1).toBe(true);
+      console.log(initialLoad);
       done();
     });
   });
