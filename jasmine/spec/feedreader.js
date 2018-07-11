@@ -112,6 +112,4 @@ $(function() {
       done();
     });
   });
-ynchronous.
-         */
 }());
