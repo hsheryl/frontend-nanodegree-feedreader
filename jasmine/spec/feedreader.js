@@ -86,7 +86,6 @@ $(function() {
 
     it('contains something', function(done){
       expect(initialLoad >= 1).toBe(true);
-      console.log(initialLoad);
       done();
     });
   });
