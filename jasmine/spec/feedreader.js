@@ -79,7 +79,7 @@ $(function() {
     let initialLoad = 0;
     beforeEach(function(done) {
       loadFeed(0, function(){
-        initialLoad = $('.feed.entry').length();
+        initialLoad = $('.feed .entry').length();
         done();
       });
   });
